@@ -7,6 +7,6 @@ type Kitchen struct {
 	Furniture furniture.KitchenSet
 }
 
-func Set(f Kitchen) {
-	f.Furniture = furniture.CreateKitchenSet()
-}
+//func (f Kitchen) Init() {
+//	f.Furniture = furniture.CreateKitchenSet()
+//}

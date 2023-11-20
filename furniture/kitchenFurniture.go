@@ -2,6 +2,7 @@ package furniture
 
 import "fmt"
 
+// все размеры в сантиметрах
 type table struct {
 	Height   float32
 	Length   float32
@@ -44,15 +45,15 @@ func CreateKitchenSet() KitchenSet {
 	var floorCabinetSlice []floorCabinet
 
 	for i := 0; i < 4; i++ {
-		chairsSlice = append(chairsSlice, chair{Material: "дерево", Height: 0.5})
-		wallCabinetSlice = append(wallCabinetSlice, wallCabinet{Material: "дерево", Length: 0.5, Width: 0.25, Height: 1})
-		floorCabinetSlice = append(floorCabinetSlice, floorCabinet{Material: "дерево", Length: 0.5, Width: 0.25, Height: 1})
+		chairsSlice = append(chairsSlice, chair{Material: "дерево", Height: 50})
+		wallCabinetSlice = append(wallCabinetSlice, wallCabinet{Material: "дерево", Length: 50, Width: 25, Height: 100})
+		floorCabinetSlice = append(floorCabinetSlice, floorCabinet{Material: "дерево", Length: 50, Width: 25, Height: 100})
 	}
 
 	for i := 0; i < 4; i++ {
 		fmt.Println(chairsSlice[i])
 	}
-	Table := table{Height: 1, Length: 2.1, Width: 0.75, Material: "дерево", Shape: "прямоугольник"}
+	Table := table{Height: 100, Length: 210, Width: 75, Material: "дерево", Shape: "прямоугольник"}
 	kSet := KitchenSet{Chairs: chairsSlice, FloorCabinets: floorCabinetSlice, Table: Table, WallCabinets: wallCabinetSlice}
 
 	return kSet

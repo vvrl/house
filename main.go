@@ -2,17 +2,20 @@ package main
 
 import (
 	"fmt"
+	"goProjects/house/furniture"
 	"goProjects/house/rooms"
 )
 
 type House struct {
-	kitchen rooms.Kitchen
+	Kitchen rooms.Kitchen
+	Bedroom rooms.Bedroom
 }
 
 func main() {
-	h := House{}
-	rooms.Set(h.kitchen)
+	h := House{Kitchen: rooms.Kitchen{Furniture: furniture.CreateKitchenSet(), Room: rooms.CreateRoom("Кухня")},
+		Bedroom: rooms.Bedroom{Room: rooms.CreateRoom("Спальня"), Furniture: furniture.CreateBedroomSet()},
+	}
 
 	//h.kitchen.Furniture = h.CreateKitchenSet()
-	fmt.Println(h)
+	fmt.Println("\n\n\n\n", h)
 }
