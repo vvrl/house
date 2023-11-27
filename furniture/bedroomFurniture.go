@@ -1,37 +1,22 @@
 package furniture
 
-// все размеры в метрах
+// все размеры в сантиметрах
 type bed struct {
-	Material string
-	Type     string
-	Length   float32
-	Width    float32
-	Colour   string
+	Furniture Furniture
+	Type      string
 }
 
 type bedsideTable struct {
-	Material string
-	Length   float32
-	Width    float32
-	Height   float32
-	Colour   string
+	Furniture Furniture
 }
 
 type dresser struct {
-	Material string
-	Length   float32
-	Width    float32
-	Height   float32
-	BoxCount int
-	Colour   string
+	Furniture Furniture
+	BoxCount  int
 }
 type wardrobe struct {
-	Material string
-	Length   float32
-	Width    float32
-	Height   float32
-	Mirror   bool
-	Colour   string
+	Furniture Furniture
+	Mirror    bool
 }
 
 type BedroomSet struct {
@@ -46,18 +31,18 @@ func CreateBedroomSet() BedroomSet {
 	var bedsideTables []bedsideTable
 
 	for i := 0; i < 2; i++ {
-		bedsideTables = append(bedsideTables, bedsideTable{Material: "Дерево",
+		bedsideTables = append(bedsideTables, bedsideTable{Furniture: Furniture{Name: "Тумбочка", Material: "Дерево",
 			Width:  40,
 			Length: 43,
 			Height: 50,
-			Colour: "Темно-серый",
+			Colour: "Темно-серый"},
 		})
 	}
 
-	return BedroomSet{Bed: bed{Material: "Металл", Type: "двуспальная кровать", Length: 200, Width: 160, Colour: "Черный"},
+	return BedroomSet{Bed: bed{Furniture: Furniture{Name: "Кровать", Material: "Металл", Height: 60, Length: 200, Width: 160, Colour: "Черный"}, Type: "Двуспальная"},
 		Bedsides: bedsideTables,
-		Dresser:  dresser{Material: "Дерево", Length: 40, Width: 130, Height: 70, BoxCount: 6, Colour: "Белый"},
-		Wardrobe: wardrobe{Material: "Дерево", Length: 180, Width: 60, Height: 220, Mirror: true, Colour: "Темно-серый"},
+		Dresser:  dresser{Furniture: Furniture{Name: "Комод", Material: "Дерево", Length: 40, Width: 130, Height: 70, Colour: "Белый"}, BoxCount: 6},
+		Wardrobe: wardrobe{Furniture: Furniture{Name: "Гардероб", Material: "Дерево", Length: 180, Width: 60, Height: 220, Colour: "Темно-серый"}, Mirror: true},
 	}
 
 }

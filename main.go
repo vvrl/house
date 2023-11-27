@@ -7,8 +7,9 @@ import (
 )
 
 type House struct {
-	Kitchen rooms.Kitchen
-	Bedroom rooms.Bedroom
+	SumSquare float32
+	Kitchen   rooms.Kitchen
+	Bedroom   rooms.Bedroom
 }
 
 func main() {
@@ -16,6 +17,5 @@ func main() {
 		Bedroom: rooms.Bedroom{Room: rooms.CreateRoom("Спальня"), Furniture: furniture.CreateBedroomSet()},
 	}
 
-	//h.kitchen.Furniture = h.CreateKitchenSet()
 	fmt.Println("\n\n\n\n", h)
 }
