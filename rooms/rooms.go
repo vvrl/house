@@ -2,6 +2,7 @@ package rooms
 
 import (
 	"fmt"
+	"goProjects/house/device"
 	"goProjects/house/furniture"
 	"math/rand"
 )
@@ -44,9 +45,11 @@ type Bedroom struct {
 type Hall struct {
 	Room      Room
 	Furniture furniture.HallSet
+	Devices   device.HallDevices
 }
 
 type Bath struct {
 	Room      Room
 	Furniture furniture.BathroomSet
+	Devices   device.BathroomDevices
 }
