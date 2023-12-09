@@ -13,9 +13,8 @@ type Animals struct {
 }
 
 func CreateAnimal() Animals {
-	var animals []animal
 
-	animals = append(animals, animal{Type: "Кот", Name: "Лох", Age: 5, Colour: "Рыжый", Gender: false})
+	animals := []animal{{Type: "Кот", Name: "Лох", Age: 5, Colour: "Рыжый", Gender: false}}
 
 	return Animals{Animals: animals}
 }

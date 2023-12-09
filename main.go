@@ -20,8 +20,8 @@ type House struct {
 }
 
 func main() {
-	h := House{Kitchen: rooms.Kitchen{Furniture: furniture.CreateKitchenSet(), Room: rooms.CreateRoom("Кухня")},
-		Bedroom:  rooms.Bedroom{Room: rooms.CreateRoom("Спальня"), Furniture: furniture.CreateBedroomSet()},
+	h := House{Kitchen: rooms.Kitchen{Room: rooms.CreateRoom("Кухня"), Furniture: furniture.CreateKitchenSet(), Devices: device.CreateKitchenDevices()},
+		Bedroom:  rooms.Bedroom{Room: rooms.CreateRoom("Спальня"), Furniture: furniture.CreateBedroomSet(), Device: device.CreateBedroomDevices()},
 		Hall:     rooms.Hall{Room: rooms.CreateRoom("Прихожая"), Furniture: furniture.CreateHallSet(), Devices: device.CreateHallDevices()},
 		Bathroom: rooms.Bath{Room: rooms.CreateRoom("Ванная комната"), Furniture: furniture.CreateBathroomSet(), Devices: device.CreateBathroomDevices()},
 		Family:   family.CreateFamily(),

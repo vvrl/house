@@ -35,11 +35,13 @@ func CreateRoom(name string) Room {
 type Kitchen struct {
 	Room      Room
 	Furniture furniture.KitchenSet
+	Devices   device.KitchenDevices
 }
 
 type Bedroom struct {
 	Room      Room
 	Furniture furniture.BedroomSet
+	Device    device.BedroomDevices
 }
 
 type Hall struct {
