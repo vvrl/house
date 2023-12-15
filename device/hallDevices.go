@@ -2,7 +2,7 @@ package device
 
 type wifiRouter struct {
 	Device           Device
-	MaxInternetSpeed int // mbit/sec
+	MaxInternetSpeed int // Mbit/sec
 	NumberOfPorts    int
 }
 
