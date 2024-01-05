@@ -37,10 +37,11 @@ func (i intercomSet) getInfo() {
 		display = "Да"
 	}
 
-	fmt.Printf("Наличие дисплея: \t%s", display)
+	fmt.Printf("Наличие дисплея: \t%s\n", display)
 }
 
 func (h HallDevices) HallDevicesInfo() {
+	fmt.Println("\v-------- УСТРОЙСТВА --------")
 	h.WifiRouter.getInfo()
 	h.RobotVacuumCleaner.getInfo()
 	h.IntercomSet.getInfo()
@@ -96,6 +97,7 @@ func (m microwaveOven) getInfo() {
 }
 
 func (k KitchenDevices) KitchenDevicesInfo() {
+	fmt.Println("\v-------- УСТРОЙСТВА --------")
 	k.Fridge.getInfo()
 	k.Dishwasher.getInfo()
 	k.Kettle.getInfo()
@@ -138,6 +140,7 @@ func (g gameConsole) getInfo() {
 }
 
 func (b BedroomDevices) BedroomDevicesInfo() {
+	fmt.Println("\v-------- УСТРОЙСТВА --------")
 	b.TV.getInfo()
 	b.Laptop.getInfo()
 	b.GameConsole.getInfo()
@@ -166,6 +169,7 @@ func (d dryer) getInfo() {
 }
 
 func (b BathroomDevices) BathroomDevicesInfo() {
+	fmt.Println("\v-------- УСТРОЙСТВА --------")
 	b.HairDryer.getInfo()
 	b.WashingMachine.getInfo()
 	b.Dryer.getInfo()

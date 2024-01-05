@@ -30,5 +30,9 @@ func CreateRoom(name string) Room {
 }
 
 func (r Room) getRoomOptions() {
-	fmt.Printf("\t\t%s\nДлина: \t%.2f м\nШирина: \t%.2f м\nВысота: \t%.2f м\nПлощадь: \t%.2f м^2\n", r.Name, r.Length, r.Width, r.Height, r.Square)
+	fmt.Println()
+	PrintLine()
+	fmt.Printf("\t\t%s\n", r.Name)
+	PrintLine()
+	fmt.Printf("\vДлина:  \t%.2f м\nШирина: \t%.2f м\nВысота: \t%.2f м\nПлощадь: \t%.2f м^2\n", r.Length, r.Width, r.Height, r.Square)
 }

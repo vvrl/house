@@ -18,12 +18,16 @@ type House struct {
 
 func (h House) GetInfo() {
 	NumRooms := reflect.ValueOf(h.Rooms).NumField()
-	//fmt.Println(NumberOfFields)
+	fmt.Println()
+	rooms.PrintLine()
 
-	fmt.Printf("\vОбщая информация\nАдрес: \t%s\nСуммарная площадь: \t%.2f м^2\nКоличество комнат: \t%d\nКоличество жильцов: \t%d\nКоличество животных\t%d\n",
+	fmt.Printf("\t\tОБЩАЯ ИНФОРМАЦИЯ\n")
+	rooms.PrintLine()
+
+	fmt.Printf("Адрес: \t%s\nСуммарная площадь: \t%.2f м^2\nКоличество комнат: \t%d\nКоличество жильцов: \t%d\nКоличество животных\t%d\n",
 		h.Address, h.SumSquare, NumRooms, len(h.Family.Family), len(h.Animals.Animals))
 
-	fmt.Println("\v------------------------------------------------")
+	rooms.PrintLine()
 
 	h.Family.FamilyGetInfo()
 	h.Animals.AnimalsGetInfo()

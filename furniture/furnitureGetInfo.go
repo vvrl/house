@@ -42,6 +42,7 @@ func (t hallTree) getInfo() {
 }
 
 func (h HallSet) HallFurnitureInfo() {
+	fmt.Println("\v-------- МЕБЕЛЬ --------")
 	h.Mirror.getInfo()
 	h.ShoeCabinet.getInfo()
 	h.HallTree.getInfo()
@@ -80,15 +81,16 @@ func (f floorCabinet) getInfo() {
 }
 
 func (k KitchenSet) KitchenFurnitureInfo() {
-	fmt.Printf("Количество подвесных шкафов: \t%d\n", len(k.WallCabinets))
+	fmt.Println("\v-------- МЕБЕЛЬ --------")
+	fmt.Printf("\vКоличество подвесных шкафов: \t%d", len(k.WallCabinets))
 	k.WallCabinets[0].getInfo()
 
-	fmt.Printf("Количество напольных шкафов: \t%d\n", len(k.FloorCabinets))
+	fmt.Printf("\vКоличество напольных шкафов: \t%d", len(k.FloorCabinets))
 	k.FloorCabinets[0].getInfo()
 
 	k.Table.getInfo()
 
-	fmt.Printf("Количество стульев: \t%d\n", len(k.Chairs))
+	fmt.Printf("\vКоличество стульев: \t%d", len(k.Chairs))
 	k.Chairs[0].getInfo()
 }
 
@@ -126,6 +128,7 @@ func (w wardrobe) getInfo() {
 }
 
 func (b BedroomSet) BedroomFurnitureInfo() {
+	fmt.Println("\v-------- МЕБЕЛЬ --------")
 	b.Bed.getInfo()
 
 	fmt.Printf("Количество тумбочек: \t%d\n", len(b.Bedsides))
@@ -167,6 +170,7 @@ func (t toilet) getInfo() {
 }
 
 func (b BathroomSet) BathroomFurnitureInfo() {
+	fmt.Println("\v-------- МЕБЕЛЬ --------")
 	b.Bathtub.getInfo()
 	b.SinkCabinet.getInfo()
 	b.MirrorCabinet.getInfo()

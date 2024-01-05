@@ -19,26 +19,19 @@ func CreateFamily() Family {
 		{Name: "Райан Гослинг", Age: 43, Gender: true, FamilyStatus: "Женат"},
 		{Name: "Меган Фокс", Age: 37, Gender: false, FamilyStatus: "Замужем"}}
 
-	//fam = append(fam, familyMember{Name: "Артем Жиренко", Age: 20, Gender: true, FamilyStatus: "Холост"})
-	//fam = append(fam, familyMember{Name: "Райан Гослинг", Age: 43, Gender: true, FamilyStatus: "Женат"})
-	//fam = append(fam, familyMember{Name: "Роман Самохин", Age: 20, Gender: true, FamilyStatus: "Холост"})
-	//fam = append(fam, familyMember{Name: "Меган Фокс", Age: 37, Gender: false, FamilyStatus: "Замужем"})
-
 	return Family{Family: fam}
 }
 
 func (f Family) FamilyGetInfo() {
-
-	//fmt.Println("Всего проживающих в доме: ", len(f.Family))
+	fmt.Print("\t\tЖИЛЬЦЫ И ЖИВОТНЫЕ")
 
 	for i := 0; i < len(f.Family); i++ {
 		gender := "Женский"
 		if f.Family[i].Gender {
 			gender = "Мужской"
 		}
-		fmt.Println("\vЖитель ", i+1)
+
+		fmt.Println("\nЖитель ", i+1)
 		fmt.Printf("Имя: \t%s\nВозраст: \t%d\nПол: \t%s\nСеймейное положение: \t%s\n", f.Family[i].Name, f.Family[i].Age, gender, f.Family[i].FamilyStatus)
-
 	}
-
 }

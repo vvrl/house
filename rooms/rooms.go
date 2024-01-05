@@ -1,6 +1,7 @@
 package rooms
 
 import (
+	"fmt"
 	"goProjects/house/device"
 	"goProjects/house/furniture"
 )
@@ -38,9 +39,13 @@ type Rooms struct {
 
 func CreateRooms() Rooms {
 
-	return Rooms{Kitchen: kitchen{Room: CreateRoom("Кухня"), Furniture: furniture.CreateKitchenSet(), Devices: device.CreateKitchenDevices()},
-		Bedroom:  bedroom{Room: CreateRoom("Спальня"), Furniture: furniture.CreateBedroomSet(), Devices: device.CreateBedroomDevices()},
-		Hall:     hall{Room: CreateRoom("Прихожая"), Furniture: furniture.CreateHallSet(), Devices: device.CreateHallDevices()},
-		Bathroom: bath{Room: CreateRoom("Ванная комната"), Furniture: furniture.CreateBathroomSet(), Devices: device.CreateBathroomDevices()}}
+	return Rooms{Kitchen: kitchen{Room: CreateRoom("КУХНЯ"), Furniture: furniture.CreateKitchenSet(), Devices: device.CreateKitchenDevices()},
+		Bedroom:  bedroom{Room: CreateRoom("СПАЛЬНЯ"), Furniture: furniture.CreateBedroomSet(), Devices: device.CreateBedroomDevices()},
+		Hall:     hall{Room: CreateRoom("ПРИХОЖАЯ"), Furniture: furniture.CreateHallSet(), Devices: device.CreateHallDevices()},
+		Bathroom: bath{Room: CreateRoom("ВАННАЯ КОМНАТА"), Furniture: furniture.CreateBathroomSet(), Devices: device.CreateBathroomDevices()}}
 
+}
+
+func PrintLine() {
+	fmt.Println("------------------------------------------------")
 }

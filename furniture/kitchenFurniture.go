@@ -39,7 +39,7 @@ func CreateKitchenSet() KitchenSet {
 		floorCabinetSlice = append(floorCabinetSlice, floorCabinet{Furniture: Furniture{Name: "Кухонный стол", Material: "Дерево", Length: 50, Width: 25, Height: 100, Colour: "Серый"}, TableTopMaterial: "Мрамор"})
 	}
 
-	Table := table{Furniture: Furniture{Height: 100, Length: 210, Width: 75, Material: "Стекло", Colour: "Белый"}, Shape: "Прямоугольник"}
+	Table := table{Furniture: Furniture{Name: "Стол", Height: 100, Length: 210, Width: 75, Material: "Стекло", Colour: "Белый"}, Shape: "Прямоугольник"}
 	kSet := KitchenSet{Chairs: chairsSlice, FloorCabinets: floorCabinetSlice, Table: Table, WallCabinets: wallCabinetSlice}
 
 	return kSet
