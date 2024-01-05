@@ -2,12 +2,19 @@ package device
 
 import "fmt"
 
+func (d Device) getGeneralDeviceOptions() {
+
+	fmt.Printf("\vНазвание: \t%s\nБренд: \t%s\nМодель: \t%s\nМощность: \t%d Вт\nДлина: \t%.2f см\nШирина: \t%.2f см\nВысота: \t%.2f см\nЦвет: \t%s\n",
+		d.Name, d.Brand, d.Model, d.Power, d.Length, d.Width, d.Height, d.Colour)
+
+}
+
 //                             Hall devices
 //------------------------------------------------------------------------------
 
 func (w wifiRouter) getInfo() {
 	w.Device.getGeneralDeviceOptions()
-	fmt.Printf("Максимальная скорость интернета: %20d Мбит/с\nКоличество портов: %20d\n", w.MaxInternetSpeed, w.NumberOfPorts)
+	fmt.Printf("Максимальная скорость интернета: \t%d Мбит/с\nКоличество портов: \t%d\n", w.MaxInternetSpeed, w.NumberOfPorts)
 }
 
 func (r robotVacuumCleaner) getInfo() {
@@ -18,7 +25,7 @@ func (r robotVacuumCleaner) getInfo() {
 		wetClean = "Да"
 	}
 
-	fmt.Printf("Емкость аккумулятора: %20d мА*ч\nВлажная уборка: %20s\n", r.BatteryCapacity, wetClean)
+	fmt.Printf("Емкость аккумулятора: \t%d мА*ч\nВлажная уборка: \t%s\n", r.BatteryCapacity, wetClean)
 
 }
 
@@ -30,7 +37,7 @@ func (i intercomSet) getInfo() {
 		display = "Да"
 	}
 
-	fmt.Println("Наличие дисплея: " + display)
+	fmt.Printf("Наличие дисплея: \t%s", display)
 }
 
 func (h HallDevices) HallDevicesInfo() {
@@ -54,13 +61,13 @@ func (f fridge) getInfo() {
 		freezer = "Да"
 	}
 
-	fmt.Printf("Морозилка: %20s\nОбъем: %20f л\nКоличество камер: %20d\n", freezer, f.Volume, f.NumOfCameras)
+	fmt.Printf("Морозилка: \t%s\nОбъем: \t%.2f л\nКоличество камер: \t%d\n", freezer, f.Volume, f.NumOfCameras)
 }
 
 func (d dishwasher) getInfo() {
 	d.Device.getGeneralDeviceOptions()
 
-	fmt.Printf("Количество программ: %20d\nРасход воды: %20f л\n", d.NumOfPrograms, d.WaterConsumption)
+	fmt.Printf("Количество программ: \t%d\nРасход воды: \t%.2f л\n", d.NumOfPrograms, d.WaterConsumption)
 }
 
 func (k electricKettle) getInfo() {
@@ -70,12 +77,12 @@ func (k electricKettle) getInfo() {
 	if k.Backlight {
 		light = "Да"
 	}
-	fmt.Printf("Объем: %20f л\nПодсветка: %20s\n", k.Volume, light)
+	fmt.Printf("Объем: \t%.2f л\nПодсветка: \t%s\n", k.Volume, light)
 }
 
 func (s stove) getInfo() {
 	s.Device.getGeneralDeviceOptions()
-	fmt.Printf("Тип: %20s\nКоличество конфорок: %20d\nОбъем духовки: %20f л\n", s.Type, s.NumOfBurners, s.OvenCapacity)
+	fmt.Printf("Тип: \t%s\nКоличество конфорок: \t%d\nОбъем духовки: \t%.2f л\n", s.Type, s.NumOfBurners, s.OvenCapacity)
 }
 
 func (m microwaveOven) getInfo() {
@@ -85,7 +92,7 @@ func (m microwaveOven) getInfo() {
 	if m.IfGrillMode {
 		grill = "Да"
 	}
-	fmt.Printf("Тип управления: %20s\nОбъем: %20f л\nРежим гриля: %20s\n", m.ControlType, m.Volume, grill)
+	fmt.Printf("Тип управления: \t%s\nОбъем: \t%.2f л\nРежим гриля: \t%s\n", m.ControlType, m.Volume, grill)
 }
 
 func (k KitchenDevices) KitchenDevicesInfo() {
@@ -110,13 +117,13 @@ func (tv tv) getInfo() {
 	if tv.VoiceAssistant {
 		voice = "Да"
 	}
-	fmt.Printf("Тип: %20s\nДиагональ: %20f дюймов\nРазрешение экрана: %20s\nГолосовое управление: %20s\n", tv.Type, tv.Diagonal, tv.Resolution, voice)
+	fmt.Printf("Тип: \t%s\nДиагональ: \t%.2f дюймов\nРазрешение экрана: \t%s\nГолосовое управление: \t%s\n", tv.Type, tv.Diagonal, tv.Resolution, voice)
 }
 
 func (l laptop) getInfo() {
 	l.Device.getGeneralDeviceOptions()
 
-	fmt.Printf("Процеcсор: %20s\nВидеокарта: %20s\nДиагональ: %20f дюймов\nОбъем оперативной памяти: %20d Гб\n", l.CPU, l.GPU, l.Diagonal, l.CapacityOfRAM)
+	fmt.Printf("Процеcсор: \t%s\nВидеокарта: \t%s\nДиагональ: \t%.2f дюймов\nОбъем оперативной памяти: \t%d Гб\n", l.CPU, l.GPU, l.Diagonal, l.CapacityOfRAM)
 }
 
 func (g gameConsole) getInfo() {
@@ -127,7 +134,7 @@ func (g gameConsole) getInfo() {
 		drive = "Да"
 	}
 
-	fmt.Printf("Процеcсор: %20s\nВидеокарта: %20s\nДисковод: %20s\nОбъем памяти: %20f\n", g.CPU, g.GPU, drive, g.MemoryCapacity)
+	fmt.Printf("Процеcсор: \t%s\nВидеокарта: \t%s\nДисковод: \t%s\nОбъем памяти: \t%.2f\n", g.CPU, g.GPU, drive, g.MemoryCapacity)
 }
 
 func (b BedroomDevices) BedroomDevicesInfo() {
@@ -145,17 +152,17 @@ func (b BedroomDevices) BedroomDevicesInfo() {
 
 func (h hairDryer) getInfo() {
 	h.Device.getGeneralDeviceOptions()
-	fmt.Printf("Количество режимов: %20d\n", h.NumberOfMods)
+	fmt.Printf("Количество режимов: \t%d\n", h.NumberOfMods)
 }
 
 func (w washingMachine) getInfo() {
 	w.Device.getGeneralDeviceOptions()
-	fmt.Printf("Объем барабана: %20d\nКоличество программ: %20d\n", w.DrumVolume, w.NumOfPrograms)
+	fmt.Printf("Объем барабана: \t%d литров\nКоличество программ: \t%d\n", w.DrumVolume, w.NumOfPrograms)
 }
 
 func (d dryer) getInfo() {
 	d.Device.getGeneralDeviceOptions()
-	fmt.Printf("Объем барабана: %20d\nМаксимальный вес загрузки: %20d\n", d.DrumVolume, d.MaxLoad)
+	fmt.Printf("Объем барабана: \t%d литров\nМаксимальный вес загрузки: \t%d кг\n", d.DrumVolume, d.MaxLoad)
 }
 
 func (b BathroomDevices) BathroomDevicesInfo() {

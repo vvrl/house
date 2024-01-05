@@ -7,7 +7,7 @@ import (
 
 type Room struct {
 	Name   string
-	Length float32
+	Length float32 //метры
 	Width  float32
 	Height float32
 	Square float32
@@ -26,10 +26,9 @@ func CreateRoom(name string) Room {
 	}
 	rm.calculateSquare()
 
-	//fmt.Println(rm)
 	return rm
 }
 
 func (r Room) getRoomOptions() {
-	fmt.Printf("%")
+	fmt.Printf("\t\t%s\nДлина: \t%.2f м\nШирина: \t%.2f м\nВысота: \t%.2f м\nПлощадь: \t%.2f м^2\n", r.Name, r.Length, r.Width, r.Height, r.Square)
 }
