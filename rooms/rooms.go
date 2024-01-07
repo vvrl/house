@@ -2,51 +2,50 @@ package rooms
 
 import (
 	"fmt"
-	"goProjects/house/furniture"
-	"math/rand"
+	"house/device"
+	"house/furniture"
 )
 
-type Room struct {
-	Name   string
-	Length float32
-	Width  float32
-	Height float32
-	Square float32
-}
-
-func (r *Room) calculateSquare() {
-	r.Square = r.Length * r.Width
-}
-
-func CreateRoom(name string) Room {
-
-	rm := Room{Name: name,
-		Length: rand.Float32()*(10-2) + 2,
-		Width:  rand.Float32()*(7-2) + 2,
-		Height: 2.8,
-	}
-	rm.calculateSquare()
-
-	fmt.Println(rm)
-	return rm
-}
-
-type Kitchen struct {
+type kitchen struct {
 	Room      Room
 	Furniture furniture.KitchenSet
+	Devices   device.KitchenDevices
 }
 
-type Bedroom struct {
+type bedroom struct {
 	Room      Room
 	Furniture furniture.BedroomSet
+	Devices   device.BedroomDevices
 }
 
-type Hall struct {
+type hall struct {
 	Room      Room
 	Furniture furniture.HallSet
+	Devices   device.HallDevices
 }
 
-type Bath struct {
+type bath struct {
 	Room      Room
 	Furniture furniture.BathroomSet
+	Devices   device.BathroomDevices
+}
+
+type Rooms struct {
+	Kitchen  kitchen
+	Bedroom  bedroom
+	Hall     hall
+	Bathroom bath
+}
+
+func CreateRooms() Rooms {
+
+	return Rooms{Kitchen: kitchen{Room: CreateRoom("КУХНЯ"), Furniture: furniture.CreateKitchenSet(), Devices: device.CreateKitchenDevices()},
+		Bedroom:  bedroom{Room: CreateRoom("СПАЛЬНЯ"), Furniture: furniture.CreateBedroomSet(), Devices: device.CreateBedroomDevices()},
+		Hall:     hall{Room: CreateRoom("ПРИХОЖАЯ"), Furniture: furniture.CreateHallSet(), Devices: device.CreateHallDevices()},
+		Bathroom: bath{Room: CreateRoom("ВАННАЯ КОМНАТА"), Furniture: furniture.CreateBathroomSet(), Devices: device.CreateBathroomDevices()}}
+
+}
+
+func PrintLine() {
+	fmt.Println("------------------------------------------------")
 }
