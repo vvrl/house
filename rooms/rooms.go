@@ -2,8 +2,8 @@ package rooms
 
 import (
 	"fmt"
-	"goProjects/house/device"
-	"goProjects/house/furniture"
+	"house/device"
+	"house/furniture"
 )
 
 type kitchen struct {

@@ -35,6 +35,4 @@ func (a Animals) AnimalsGetInfo() {
 		fmt.Printf("Вид: \t%s\nИмя: \t%s\nВозраст:\t%d\nЦвет: \t%s\nПол: \t%s\n", a.Animals[i].Type, a.Animals[i].Name, a.Animals[i].Age, a.Animals[i].Colour, gender)
 
 	}
-
-	//house.PrintLine()
 }

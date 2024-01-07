@@ -1,10 +1,10 @@
-package house
+package home
 
 import (
 	"fmt"
-	"goProjects/house/animal"
-	"goProjects/house/family"
-	"goProjects/house/rooms"
+	"house/animal"
+	"house/family"
+	"house/rooms"
 	"reflect"
 )
 

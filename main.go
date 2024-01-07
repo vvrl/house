@@ -1,10 +1,8 @@
 package main
 
-import (
-	"goProjects/house/house"
-)
+import "house/home"
 
 func main() {
-	h := house.CreateHouse("ул.Кошкина д.2")
+	h := home.CreateHouse("ул.Кошкина д.2")
 	h.GetInfo()
 }
